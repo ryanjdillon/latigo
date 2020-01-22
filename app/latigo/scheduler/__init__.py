@@ -33,7 +33,9 @@ class Scheduler:
         self.model_info_config = self.config.get("model_info", None)
         if not self.model_info_config:
             self._fail("No model info config specified")
-        self.model_info_connection_string = self.model_info_config.get("connection_string", "no connection string set for model info")
+        self.model_info_connection_string = self.model_info_config.get(
+            "connection_string", "no connection string set for model info"
+        )
         # NOTE: This is a hack. We need a project appended to the URL for it to be valid, but there is no guarantee that the project has been set up with lat-lit project
         self.model_info_connection_string += "/lat-lit/"
         self.model_info_provider = model_info_provider_factory(self.model_info_config)
@@ -249,7 +251,9 @@ class Scheduler:
             sleep_time = 20
             logger.error("")
             logger.error(" ### ### Latigo could not be started!")
-            logger.error(f"         Will pause for {sleep_time} seconds before terminating.")
+            logger.error(
+                f"         Will pause for {sleep_time} seconds before terminating."
+            )
             logger.error("         Please see previous error messages for clues.")
             logger.error("")
             sleep(sleep_time)

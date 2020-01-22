@@ -44,7 +44,9 @@ setup(
     version=read_file("VERSION"),
     author="Lennart Rolland",
     author_email="lroll@equinor.com",
-    description=("A continuous prediction service that uses Gordo to predict data for IOC"),
+    description=(
+        "A continuous prediction service that uses Gordo to predict data for IOC"
+    ),
     license="AGPL-3.0",
     keywords="gordo ioc continuous prediction",
     url="https://github.com/equinor/latigo",
@@ -52,8 +54,12 @@ setup(
     setup_requires=setup_requirements,
     zip_safe=True,
     long_description=read_file("README.md"),
-    install_requires=read_requirements_file("requirements.in"),  # Allow flexible deps for install
-    tests_require=read_requirements_file("test_requirements.txt"),  # Use rigid deps for testing
+    install_requires=read_requirements_file(
+        "requirements.in"
+    ),  # Allow flexible deps for install
+    tests_require=read_requirements_file(
+        "test_requirements.txt"
+    ),  # Use rigid deps for testing
     test_suite="../tests",
     python_requires="~=3.7.4",
     include_package_data=True,

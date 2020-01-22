@@ -15,6 +15,7 @@ sys.path.insert(0, latigo_path)
 sys.path.insert(0, "/private/lroll/Desktop/ioc_client/latigo/app/latigo")
 sys.path.insert(0, "/private/lroll/Desktop/ioc_client/latigo/app")
 
+
 @pytest.fixture
 def auth_config():
     return {

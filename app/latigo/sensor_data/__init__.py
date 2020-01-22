@@ -47,7 +47,9 @@ def sensor_data_provider_factory(sensor_data_provider_config):
     if "time_series_api" == sensor_data_provider_type:
         from latigo.time_series_api import TimeSeriesAPISensorDataProvider
 
-        sensor_data_provider = TimeSeriesAPISensorDataProvider(sensor_data_provider_config)
+        sensor_data_provider = TimeSeriesAPISensorDataProvider(
+            sensor_data_provider_config
+        )
     else:
         sensor_data_provider = DevNullSensorDataProvider(sensor_data_provider_config)
     return sensor_data_provider
