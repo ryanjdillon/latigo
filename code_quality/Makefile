@@ -21,8 +21,8 @@ mypy:
 	mypy --ignore-missing-imports "${TESTS_DIR}"
 
 black:
-	black -l 999 -t py37 "${APP_DIR}"
-	black -l 999 -t py37 "${TESTS_DIR}"
+	black -l 88 -t py37 "${APP_DIR}"
+	black -l 88 -t py37 "${TESTS_DIR}"
 
 coverage:
 	python -m pytest --junitxml=junit-results.xml --cov="${APP_DIR}" --cov-report=xml --cov-report=html unit
