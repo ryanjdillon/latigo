@@ -1,15 +1,16 @@
 import pytest
 from unittest import mock
+import typing
 
 from latigo.auth import fetch_access_token, create_auth_session
 
-VALID_TOKEN = {
+VALID_TOKEN: typing.Dict[str, typing.Union[str, int]] = {
     "accessToken": "dummy-token",
     "refreshToken": "dummy-refresh",
     "tokenType": "dummy-type",
     "expiresIn": 1000,
 }
-BAD_TOKEN = {}
+BAD_TOKEN: typing.Dict[str, typing.Union[str, int]] = {}
 
 
 @mock.patch("latigo.auth.adal.AuthenticationContext", autospec=True)
